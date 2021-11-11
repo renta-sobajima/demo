@@ -1,7 +1,6 @@
-package junit.tutorial.ex01.e02;
+package junit.tutorial.ex01.e04;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class CalculatorTest {
+class NumberUtilsTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -28,13 +27,15 @@ class CalculatorTest {
 	}
 
 	@Test
-	void test() {
-		Calculator calculator = new Calculator();
-		try {
-			calculator.divide(1,1);
-			fail("例外が発生しました");
-		}catch(IllegalArgumentException e){
-			assertEquals("divide by zero.",e.getMessage(),"正しくありません");
-		}
+	void test1() {
+		boolean result = NumberUtils.isEven(10);
+		assertEquals(true,result,"error");
 	}
+	
+	@Test
+	void test2() {
+		boolean result = NumberUtils.isEven(7);
+		assertEquals(false,result,"error");
+	}
+
 }
