@@ -1,6 +1,10 @@
 package junit.tutorial.ex02.e02;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+
+import java.io.InputStream;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -9,6 +13,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class EmployeeTest {
+	
+	InputStream input = getClass().getResourceAsStream("Employee.txt");
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -27,8 +33,12 @@ class EmployeeTest {
 	}
 
 	@Test
-	void testLoad() {
-		fail("Not yet implemented");
+	void test() {
+		Employee employee = new Employee();
+		List<String>employee = 
+		assertAll();
 	}
+	
+	
 
 }
